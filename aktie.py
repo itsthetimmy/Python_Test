@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 
 #Nur für ARD Börsenseite!
 #url = "https://kurse.boerse.ard.de/ard/kurse_einzelkurs_uebersicht.htn?i=9408435" # Tesla
-url = "https://kurse.boerse.ard.de/ard/fonds_einzelkurs_uebersicht.htn?i=163575" #UniRak
 
 
 def getpreis(url):
@@ -19,7 +18,6 @@ def getpreis(url):
     if (preis.find('€') != -1):
         waehrung = "€"
         preis=preis.replace("€</span>" , "")#Euro etc entfernen
-        #preis=float(preis[1:])
     elif (preis.find('$') != -1):
         waehrung = "$"
         preis=preis.replace(".","") #Beim Dollar den Tausender-Punkt entfernen
